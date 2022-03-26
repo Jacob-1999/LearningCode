@@ -1,10 +1,21 @@
-const Discord = require("discord.js")
-
 module.exports = {
   name: "interactionCreate",
   run: async (bot, interaction) => {
       if (interaction.isCommand()) handleSlashCommand(bot, interaction)
+      else if (interaction.isButton()) handleButton(bot, interaction)
   },
+}
+
+const handleButton = (bot, interaction) => {
+  const {client} = bot 
+
+  // "name-param1-param2-...."
+  const [name, ...params] = interaction.customId.split("-")
+  
+  const button = client.buttons.get(name)
+
+  if (!button) return 
+  button.run(client, interaction, params)
 }
 
 const handleSlashCommand = (bot, interaction) => {
