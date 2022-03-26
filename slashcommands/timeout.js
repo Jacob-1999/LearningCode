@@ -32,10 +32,8 @@ module.exports = {
   perm: "MODERATE_MEMBERS",
   options: [
     {
-      name: "user",
-      description: "The user to timeout",
-      type: "USER",
-      required: true
+      name: "user", description: "The user to timeout",
+      type: "USER", required: true
     },
     {
       name: "duration",
@@ -47,9 +45,9 @@ module.exports = {
     },
     {
       name: "reason",
-      descroption: "Reason for timeout",
+      description: "Reason for timeout",
       type: "STRING",
       required: false
     }
-  ]
+  ], run
 }
