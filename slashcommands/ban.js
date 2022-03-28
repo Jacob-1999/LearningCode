@@ -8,12 +8,12 @@ const run = async (client, interaction) => {
     await interaction.guild.bans.create(member, {
       reason
     })
-    return interaction.reply(`${member.user.tag} has been banned (\`${reason}\`)`)
+    return interaction.reply(`<:ic_ban:958054549606789250> ${member.user.tag} has been banned (\`${reason}\`)`)
   }
   catch(err){
     if (err)
       console.log(err)
-      return interaction.reply(`Failed to ban ${member.user.tag}`)
+      return interaction.reply(`<:ic_interactionfail:958054549996863558> Failed to ban ${member.user.tag}`)
   }
 }
 

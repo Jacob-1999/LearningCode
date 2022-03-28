@@ -21,11 +21,11 @@ module.exports = {
     let member = message.member
 
     if (command.devOnly && !owners.includes(member.id)){
-      return message.reply("This is an owner only command.")
+      return message.reply("<:ic_interactionfail:958054549996863558> This is an owner only command.")
     }
 
     if (command.permissions && member.permissions.missing(command.permissions).length !== 0){
-      return message.reply("You do not have permission to run this command.")
+      return message.reply("<:ic_interactionfail:958054549996863558> You do not have permission to run this command.")
     }
 
     try {

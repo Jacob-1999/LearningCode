@@ -6,12 +6,12 @@ const run = async (client, interaction) => {
 
   try {
     await interaction.guild.members.kick(member, reason)
-    return interaction.reply(`${member.user.tag} has been kicked (\`${reason}\`)`)
+    return interaction.reply(`<:ic_kick:958054550005227581> ${member.user.tag} has been kicked (\`${reason}\`)`)
   }
   catch(err){
     if (err)
       console.log(err)
-      return interaction.reply(`Failed to kick ${member.user.tag}`)
+      return interaction.reply(`<:ic_interactionfail:958054549996863558> Failed to kick ${member.user.tag}`)
   }
 }
 

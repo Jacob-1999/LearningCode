@@ -17,12 +17,12 @@ const run = async (client, interaction) => {
 
   try {
     await member.timeout(duration, reason)
-    return interaction.reply(`${member.user.tag} has been timedout for ${durations.find(d=> duration === d.value)?.name}. Reason: ${reason}`)
+    return interaction.reply(`<:ic_timeout:958054710273794118> ${member.user.tag} has been timedout for ${durations.find(d=> duration === d.value)?.name} (\`${reason}\`)`)
   }
   catch(err){
     if (err)
       console.log(err)
-      return interaction.reply(`Failed to timeout ${member.user.tag}`)
+      return interaction.reply(`<:ic_interactionfail:958054549996863558> Failed to timeout ${member.user.tag}`)
   }
 }
 

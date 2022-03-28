@@ -20,7 +20,7 @@ const handleButton = (bot, interaction) => {
 
 const handleSlashCommand = (bot, interaction) => {
   const {client} = bot
-  if (!interaction.inGuild()) return interaction.reply("This command can only be used in a guild")
+  if (!interaction.inGuild()) return interaction.reply("<:ic_interactionfail:958054549996863558> This command can only be used in a guild")
 
   const slashcmd = client.slashcommands.get(interaction.commandName)
 
@@ -28,7 +28,7 @@ const handleSlashCommand = (bot, interaction) => {
 
   // check permissions
   if (slashcmd.perms && !interaction.member.permissions.has(slashcmd.perms))
-      return interaction.reply("You do not have permission to use this command")
+      return interaction.reply("<:ic_interactionfail:958054549996863558> You do not have permission to use this command")
 
   slashcmd.run(client, interaction)
 }
